@@ -1,0 +1,68 @@
+[
+    {
+        "pastResults": [0,0,3,5,8,10,22,26,36,57,85,98],
+        "presentResults": [13,30,37,48,63,86,105],
+        "signIn": [ , , , ,199,226,272],
+        "unit": "Estaca Cárdenas México"
+    },
+    {
+        "pastResults": [0,0,0,0,0,0,3,3,3,3,5,6],
+        "presentResults": [1,3,5,8,11,15,18],
+        "signIn": [ , , , ,26,30,35],
+        "unit": "Barrio Cañales"
+    },
+    {
+        "pastResults": [0,0,0,0,1,1,2,2,5,7,8,8],
+        "presentResults": [1,1,1,2,3,3,8],
+        "signIn": [ , , , ,21,22,27],
+        "unit": "Barrio Comalcalco"
+    },
+    {
+        "pastResults": [0,0,3,4,5,5,12,13,13,14,14,21],
+        "presentResults": [8,10,11,11,12,21,22],
+        "signIn": [ , , , ,33,39,43],
+        "unit": "Barrio Cunduacán"
+    },
+    {
+        "pastResults": [0,0,0,0,0,1,1,1,3,3,4,4],
+        "presentResults": [0,0,0,0,0,1,2],
+        "signIn": [ , , , ,10,10,13],
+        "unit": "Barrio Cárdenas"
+    },
+    {
+        "pastResults": [0,0,0,0,0,0,1,1,1,3,3,3],
+        "presentResults": [1,1,1,1,1,1,4],
+        "signIn": [ , , , ,7,7,16],
+        "unit": "Rama Huimanguillo"
+    },
+    {
+        "pastResults": [0,0,0,0,0,0,0,2,2,3,7,8],
+        "presentResults": [0,5,6,11,13,17,20],
+        "signIn": [10,17,18,26,26,28,31],
+        "unit": "Barrio Los Reyes"
+    },
+    {
+        "pastResults": [0,0,0,1,1,1,1,2,2,15,32,32],
+        "presentResults": [2,6,9,9,10,12,15],
+        "signIn": [ , , , ,32,39,50],
+        "unit": "Barrio Morelos"
+    },
+    {
+        "pastResults": [0, 0, 0, 0, 0, 2, 2, 2, 7, 8, 10, 11],
+        "presentResults": [1, 3, 3, 5, 12, 13, 13],
+        "signIn": [ , , , , 33, 35, 38],
+        "unit": "Barrio Paraíso"
+    },
+    {
+        "pastResults": [0,0,0,0,0,0,0,0,0,1,2,5],
+        "presentResults": [0,1,1,1,1,3,3],
+        "signIn": [ , , , ,11,15,16],
+        "unit": "Barrio Petrolera"
+    },
+    {
+        "pastResults": [0,0,0,0,0,0,0,0,0,0,0,0],
+        "presentResults": [0,0,0,0,0,0,0],
+        "signIn": [ , , , ,0,1,3],
+        "unit": "Rama Sánchez Magallanes"
+    }
+]
