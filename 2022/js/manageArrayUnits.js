@@ -235,9 +235,10 @@ const showBy = () => {
                 ];
                 document.getElementById("demo").innerHTML = unitList[7][2];    
                 // Define Layout
+                var iniFS =  unitList.length
                 var layout = {
                 xaxis: { title: ""},
-                yaxis: {range: [0, 55], title: "Membresía"},  
+                yaxis: {range: [0, unitList[7][iniFS]], title: "Membresía"},  
                 title: "Miembros que enviaron nombres para ordenanzas al Templo este año"
                 };
                 
