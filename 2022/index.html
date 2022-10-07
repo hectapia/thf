@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Informe THF</title>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" href="css/media.css" />
 </head>
 <body>
     <header>
-        <h1>Informe de actividades de Templo e Historia Familiar</h1>
+        <h3>Estaca Cárdenas México</h3>
+        <h4> Informe de actividades de Templo e Historia Familiar</h4>
     </header>
     <section>
-        <h2>Unidades de la Estaca Cárdenas México</h2>
         <p>
             Mostrar: 
             <select id="showBy">
@@ -29,10 +30,13 @@
                 <option value="branchMagallanes">Rama Sánchez Magallanes</option>                                             
             </select>
         </p>
-        <div id="demo"></div>
-    </section> 
-    <div id="myPlot" style="width:100%;max-width:700px;border: 5px solid lightgray"></div>
-    <script src="js/manageArrayUnits.js"></script> 
-    <p>Fuente: <a href="https://www.churchofjesuschrist.org/?lang=spa">churchofjesuschrist.org/</a></p>     
+    </section>
+    <div id="myPlot"></div>  <br>
+    <div id="dynamictable"></div>  <br>
+    <footer>
+    <p>Fuente: <a href="https://www.churchofjesuschrist.org/?lang=spa" target="_blank">
+        www.churchofjesuschrist.org</a></p>     
+    </footer>
+    <script src="js/manageArrayUnits.js"></script>    
 </body>
 </html>
