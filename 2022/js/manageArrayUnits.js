@@ -256,7 +256,7 @@ let unitGroupList = [
 graphData = (j) => {
             // Define Data 
             var data = [
-                {x: xArray, y: unitList[j][0], name:"2021", type:"bar"},
+                {x: xArray, y: unitList[j][0], name:"2021", mode:"lines+markers"}, // type:"bar"
                 {x: xArray, y: unitList[j][1], name:"2022", mode:"lines+markers"},
                 {x: xArray, y: unitList[j][2], name:"FamilySearch", mode:"lines+markers+values"},
                 {x: xArray, y: unitList[j][3], name:"Recomendación", mode:"lines+markers"}                             
