@@ -1,0 +1,28 @@
+.lumen-image {
+    margin: 0;
+
+    &__wrapper {
+        position:relative;
+    }
+    &__copyright {
+        position:absolute;
+        bottom:6px;
+        left: 8px;
+        color:$color--white;
+        font-size: $font__size--100;
+        // text-shadow:1px 1px 1px $color--black__700;
+        line-height: $font__line-height--400;
+    }
+
+    &__picture {
+        display: block;
+    }
+
+    &__image {
+        width: 100%;
+    }
+
+    &.lumen-image__lazy.no-js{
+        display: none;
+    }
+}
