@@ -54,7 +54,6 @@ a:link:active, a:visited:active {
     #myPlot, #dynamictable {
         width:100%;
         max-width:700px;
-        color: crimson;
     }
 
 }
