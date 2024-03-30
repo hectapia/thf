@@ -16,15 +16,42 @@ main {
     align-items: center;
 }
 
-  h3, h4, p, #dynamictable {
+aside, .followplan {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.followplan {
+    width: 1000px;
+}
+
+.decimal *{
+    padding-top: 10px;
+}
+
+section {
+    width: 700px;
+    display:flex; font-size: x-large; 
+    flex-direction: column;
+    justify-content: left;
+    padding-left: 10px;
+}
+
+cite {
+    font-size: large; 
+}
+
+  h1,h2,h3, h4, p, #dynamictable {
       font-family: "Ensign:Sans",Arial,"noto sans",sans-serif;
   }
   
   header h3, h4 { margin: 5px;}
   
   #myPlot, #dynamictable {
-      width:100%;
-      max-width:420px;
+       width:100%;
+      max-width:720px; 
       border: 5px solid lightgray;
       box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 15px 0 rgba(0, 0, 0, 0.19);
       margin-left: 2%;
@@ -47,7 +74,7 @@ main {
   }
   
   tr:nth-child(even) {
-      background-color: #aadbdb;
+      background-color: #97dbf0;
   }
   a:link, a:visited {
       font-size: 0.9rem;
@@ -57,11 +84,11 @@ main {
       color: yellow;
   }
   
-  @media only screen and (min-width: 420px) {
+ @media only screen and (min-width: 420px) {
   
       #myPlot, #dynamictable {
           width:100%;
           max-width:700px;
       }
   
-  }
+  } 
