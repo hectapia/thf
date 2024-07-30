@@ -299,7 +299,7 @@ graphData = (j) => {
             let datas = graphElements.data, 
                 layouts = graphElements.layout;
             
-            var config = {responsive: true}
+            var config = {responsive: true};
 
                 // Display using Plotly
                 Plotly.newPlot("myPlot", datas, layouts,config);
