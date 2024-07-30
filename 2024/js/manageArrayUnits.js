@@ -298,9 +298,11 @@ graphData = (j) => {
             let graphElements = graphData(0);
             let datas = graphElements.data, 
                 layouts = graphElements.layout;
+            
+            var config = {responsive: true}
 
                 // Display using Plotly
-                Plotly.newPlot("myPlot", datas, layouts);
+                Plotly.newPlot("myPlot", datas, layouts,config);
 
 
 const reset = () => {
