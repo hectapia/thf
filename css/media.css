@@ -74,7 +74,7 @@ cite {
   }
   
   tr:nth-child(even) {
-      background-color: #97dbf0;
+      background-color:rgb(147 197 253);
   }
   a:link, a:visited {
       font-size: 0.9rem;

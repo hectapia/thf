@@ -282,16 +282,16 @@ graphData = (j) => {
                 {x: xArray, y: unitList[j][1], name:"2022", mode:"lines+markers", line: {color: '#bebebe'}},
                 {x: xArray, y: unitList[j][2], name:"2023", mode:"lines+markers", line: {color: '#bebebe'}},
                 {x: xArray, y: unitList[j][3], name:"2024", mode:"lines+markers", line: {color: '#4ad27f'}},
-                {x: xArray, y: unitList[j][4], name:"I.S. FamilySearch", mode:"lines+markers", line: {color: 'orange'}},
-                {x: xArray, y: unitList[j][5], name:"Recom. Vigent.", mode:"lines+markers", line: {color: '#559aef'}}                             
+                {x: xArray, y: unitList[j][4], name:"IS", mode:"lines+markers", line: {color: 'orange'}},
+                {x: xArray, y: unitList[j][5], name:"RV", mode:"lines+markers", line: {color: '#559aef'}}                             
                 ];
                 // document.getElementById("demo").innerHTML = unitList[0][0];    
                 // Define Layout
                     var recom =  unitList[j][4].length
                     var layout = {
-                    xaxis: { title: ""},
+                    xaxis: { title: "IS: Inicio sesión    RV: Recomendación vigente"},
                     yaxis: {range: [0, unitList[j][recom]], title: "Enviadores"},
-                title: "Miembros que enviaron nombres para ordenanzas al Templo este año"
+                title: "Miembros que enviaron nombres<br>para ordenanzas al Templo este año"
                 };
                 return {data, layout};
             }
