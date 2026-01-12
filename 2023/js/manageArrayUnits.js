@@ -1,16 +1,30 @@
-
-
-// Step 1: Declare a function named output that accepts a list of temples as an array argument and does the following for each temple:
-
+// This const contains the labels for the x axis, in fact, it is a const since contains the months of the year
 var xArray = ["Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic"];
-            
+
+// This array of arrays contains the data for each unit: "Estaca Cárdenas México", "Barrio Cañales", "Barrio Comalcalco", "Barrio Cunduacán", "Barrio Cárdenas", "Rama Huimanguillo", "Barrio Los Reyes", "Barrio Morelos", "Barrio Paraíso", "Barrio Petrolera", "Rama Sánchez Magallanes"            
+// Each unit contains 6 arrays: 2021 data, 2022 data, 2023 data, IS: inicio sesion FamilySearch data, RV: Recomendación vigente data, Goal data
+// Each array contains 12 values, one for each month of the year
+// The last element of each unit array is the name of the unit
+// Example: unitList[0] is the data for "Estaca Cárdenas México"
+// unitList[0][0] is the 2021 data for "Estaca Cárdenas México"
+// unitList[0][1] is the 2022 data for "Estaca Cárdenas México"
+// unitList[0][2] is the 2023 data for "Estaca Cárdenas México"
+// unitList[0][3] is the FamilySearch data for "Estaca Cárdenas México"
+// unitList[0][4] is the Recomendación data for "Estaca Cárdenas México"
+// unitList[0][5] is the Goal data for "Estaca Cárdenas México"
+// unitList[0][6] is the name of the unit "Estaca Cárdenas México"
+// The same structure applies for the other units
+// Note: null values are used for months where data is not available
+// This allows for better visualization in the graphs
+// we can use this data to create a sql database where one table contains the unit names and another table contains the anual data by month for each unit
 let unitList = [
     [
-        [0,0,3,5,8,10,22,26,36,57,85,98],
-        [13,30,37,48,63,86,105,113,126,136,154,165],
-        [33,71,110,170,183,197,211,229,238,258,314,346],
-        [131,193,243,301,323,336,351,365,379,404,449,470],
-        [513,510,508,500,495,475,456,470,480,485,490,490],        
+        [0,0,3,5,8,10,22,26,36,57,85,98],                   /*2021*/
+        [13,30,37,48,63,86,105,113,126,136,154,165],        /*2022*/
+        [33,71,110,170,183,197,211,229,238,258,314,346],    /*2023*/
+        [131,193,243,301,323,336,351,365,379,404,449,470],  /*IS*/
+        [513,510,508,500,495,475,456,470,480,485,490,490],  /*RV*/  
+        [272,272,272,272,272,272,272,272,272,272,272,272],  /*Goal*/  
         "Estaca Cárdenas México"
     ],
     [
@@ -18,7 +32,8 @@ let unitList = [
         [1,3,5,8,11,15,18,19,20,21,27,27],
         [6,17,26,36,38,41,44,44,45,46,54,62],
         [26,35,40,49,51,54,57,57,57,57,63,71],
-        [60,60,60,60,60,60,61,61,61,61,65,75],        
+        [60,60,60,60,60,60,61,61,61,61,65,75],
+        [25,25,25,25,25,25,25,25,25,25,25,25],
         "Barrio Cañales"
     ],
     [
@@ -26,7 +41,8 @@ let unitList = [
         [1,1,1,2,3,3,8,9,9,9,11,11],
         [1,2,5,9,10,10,12,12,13,16,26,28],
         [10,12,22,24,30,30,33,33,35,35,44,47],
-        [54,54,54,54,54,54,51,54,54,54,54,54],      
+        [54,54,54,54,54,54,51,54,54,54,54,54],     
+        [25,25,25,25,25,25,25,25,25,25,25,25],
         "Barrio Comalcalco"
     ],
     [
@@ -34,7 +50,8 @@ let unitList = [
         [8,10,11,11,12,21,22,22,26,27,28,29],
         [5,17,21,29,30,30,30,37,39,42,48,48],
         [18,33,37,37,49,49,50,55,58,61,63,63],
-        [73,73,73,73,73,73,73,73,73,73,73,73],        
+        [73,73,73,73,73,73,73,73,73,73,73,73],
+        [25,25,25,25,25,25,25,25,25,25,25,25],
         "Barrio Cunduacán"
     ],
     [
@@ -42,7 +59,8 @@ let unitList = [
         [0,0,0,0,0,1,2,3,3,3,5,3],
         [0,1,7,17,18,19,18,21,21,21,22,23],
         [0,15,21,26,31,31,30,30,30,30,32,32],
-        [41,41,41,41,41,41,32,41,41,41,41,41],       
+        [41,41,41,41,41,41,32,41,41,41,41,41],   
+        [25,25,25,25,25,25,25,25,25,25,25,25],
         "Barrio Cárdenas"
     ],
     [
@@ -50,7 +68,8 @@ let unitList = [
         [1,1,1,1,1,1,4,4,4,10,10,10],
         [2,2,4,7,9,12,15,15,15,15,19,20],
         [2,4,7,11,11,15,18,18,18,20,25,25],
-        [27,27,27,27,27,27,34,34,34,34,34,34],        
+        [27,27,27,27,27,27,34,34,34,34,34,34],     
+        [25,25,25,25,25,25,25,25,25,25,25,25],
         "Rama Huimanguillo"
     ],
     [
@@ -58,7 +77,8 @@ let unitList = [
         [0,5,6,11,13,17,20,20,19,20,21,22],
         [0,4,13,19,20,20,20,24,25,26,35,35],
         [11,23,23,37,37,37,37,38,39,40,45,45],
-        [38,38,38,38,38,38,38,38,38,38,38,38],        
+        [38,38,38,38,38,38,38,38,38,38,38,38],   
+        [25,25,25,25,25,25,25,25,25,25,25,25],
         "Barrio Los Reyes"
     ],
     [
@@ -66,7 +86,8 @@ let unitList = [
         [2,6,9,9,10,12,15,16,22,21,24,29],
         [13,15,19,33,38,42,46,47,49,59,65,70],
         [23,24,24,25,48,51,55,57,63,70,78,82],
-        [84,84,84,84,84,84,78,78,78,83,83,83],        
+        [84,84,84,84,84,84,78,78,78,83,83,83],    
+        [25,25,25,25,25,25,25,25,25,25,25,25],    
         "Barrio Morelos"
     ],
     [
@@ -74,7 +95,8 @@ let unitList = [
         [1,3,3,5,12,13,13,16,19,21,22,23],
         [4,11,12,16,17,17,17,19,20,21,28,34],
         [24,28,28,40,43,45,47,49,51,57,59,61],
-        [79,79,79,79,79,79,57,59,59,59,62,62],        
+        [79,79,79,79,79,79,57,59,59,59,62,62],  
+        [25,25,25,25,25,25,25,25,25,25,25,25],      
         "Barrio Paraíso"
     ],
     [
@@ -82,7 +104,8 @@ let unitList = [
         [0,1,1,1,1,3,3,4,4,4,5,10],
         [1,1,2,3,3,4,7,8,8,10,15,15],
         [7,12,12,12,15,15,16,20,20,25,31,31],
-        [43,43,43,43,43,43,19,25,25,30,33,33],        
+        [43,43,43,43,43,43,19,25,25,30,33,33],    
+        [25,25,25,25,25,25,25,25,25,25,25,25],    
         "Barrio Petrolera"
     ],
     [
@@ -90,26 +113,38 @@ let unitList = [
         [0,0,0,0,0,0,0,0,0,0,1,1],
         [1,1,1,1,1,2,2,2,2,2,2,2],
         [7,7,7,7,8,8,8,8,8,9,9,9],
-        [23,23,23,23,23,23,16,16,16,16,16,16],        
+        [23,23,23,23,23,23,16,16,16,16,16,16],   
+        [25,25,25,25,25,25,25,25,25,25,25,25],     
         "Rama Sánchez Magallanes"
     ]                
     ]
 
+// This array of arrays contains the monthly data for each unit: "Estaca Cárdenas México", "Barrio Cañales", "Barrio Comalcalco", "Barrio Cunduacán", "Barrio Cárdenas", "Rama Huimanguillo", "Barrio Los Reyes", "Barrio Morelos", "Barrio Paraíso", "Barrio Petrolera", "Rama Sánchez Magallanes"            
+// Each unit contains 12 arrays: one for each month of the year
+// Each array contains 5 values: Total, Adults, Youth, New Members, YSA
+// Example: unitGroupList[0] is the data for "Estaca Cárdenas México"
+// unitGroupList[0][0] is the data for January for "Estaca Cárdenas México"
+// unitGroupList[0][0][0] is the Total for January for "Estaca Cárdenas México" and is the same for the current month by year in the unitList array
+// unitGroupList[0][0][1] is the Adults for January for "Estaca Cárdenas México"
+// unitGroupList[0][0][2] is the Youth for January for "Estaca Cárdenas México"
+// unitGroupList[0][0][3] is the New Members for January for "Estaca Cárdenas México"
+// unitGroupList[0][0][4] is the YSA for January for "Estaca Cárdenas México"
+// The same structure applies for the other months and other units
+// Note: null values are used for months where data is not available    
 let unitGroupList = [
-[
-    [33,26,7,0,4],
-    [71,56,15,0,9],
-    [110,94,16,1,17],
-    [170,145,25,5,24],
-    [184,151,33,3,24],
-    [197,162,35,3,30],
-    [210,174,36,4,32],
-    [229,191,38,4,37],
-    [238,199,39,5,42],
-    [258,215,43,5,46],
-    [314,260,54,9,64],
-    [346,293,53,11,64]         
-/* "Estaca Cárdenas México" */ 
+[                       /* Estaca Cárdenas México */
+    [33,26,7,0,4],      /* Ene: Total, Adults, Youth, New Members, YSA */
+    [71,56,15,0,9],     /* Feb: Total, Adults, Youth, New Members, YSA */
+    [110,94,16,1,17],   /* Mar: Total, Adults, Youth, New Members, YSA */
+    [170,145,25,5,24],  /* Abr: Total, Adults, Youth, New Members, YSA */
+    [184,151,33,3,24],  /* May: Total, Adults, Youth, New Members, YSA */
+    [197,162,35,3,30],  /* Jun: Total, Adults, Youth, New Members, YSA */
+    [210,174,36,4,32],  /* Jul: Total, Adults, Youth, New Members, YSA */
+    [229,191,38,4,37],  /* Ago: Total, Adults, Youth, New Members, YSA */
+    [238,199,39,5,42],  /* Sep: Total, Adults, Youth, New Members, YSA */
+    [258,215,43,5,46],  /* Oct: Total, Adults, Youth, New Members, YSA */
+    [314,260,54,9,64],  /* Nov: Total, Adults, Youth, New Members, YSA */
+    [346,293,53,11,64]  /* Dic: Total, Adults, Youth, New Members, YSA */       
 ],
 [
     [6,5,1,0,1],
@@ -263,39 +298,44 @@ let unitGroupList = [
 ]
 ]
 
-
+// Function to generate graph data and layout for a given unit index
 graphData = (j) => {
-            // Define Data 
+            // Define the data traces for the graph 
             var data = [
-                {x: xArray, y: unitList[j][0], name:"2021", mode:"lines+markers", line: {color: '#bebebe'}}, // type:"bar"
+                {x: xArray, y: unitList[j][0], name:"2021", mode:"lines+markers", line: {color: '#bebebe'}}, 
                 {x: xArray, y: unitList[j][1], name:"2022", mode:"lines+markers", line: {color: '#bebebe'}},
                 {x: xArray, y: unitList[j][2], name:"2023", mode:"lines+markers", line: {color: '#4ad27f'}},
-                {x: xArray, y: unitList[j][3], name:"I.S. FamilySearch", mode:"lines+markers+values", line: {color: 'orange'}},
-                {x: xArray, y: unitList[j][4], name:"Recom. Vigent.", mode:"lines+markers", line: {color: '#559aef'}}                             
+                {x: xArray, y: unitList[j][3], name:"IS", mode:"lines+markers+values", line: {color: 'orange'}},
+                {x: xArray, y: unitList[j][4], name:"RV", mode:"lines+markers", line: {color: '#559aef'}},
+                {x: xArray, y: unitList[j][5], name:"Meta", mode:"lines+markers"}                               
                 ];
-                // document.getElementById("demo").innerHTML = unitList[0][0];    
-                // Define Layout
-                    var recom =  unitList[j][3].length
-                    var layout = {
-                    xaxis: { title: ""},
-                    yaxis: {range: [0, unitList[j][recom]], title: "Enviadores"},
+
+                var recom =  unitList[j][4].length 
+                var layout = {
+                xaxis: { title: "IS: Inicio sesión  RV: Recomendación vigente  Meta: Objetivo anual"},
+                yaxis: {range: [0, unitList[j][recom]], title: "Enviadores"},
                 title: "Miembros que enviaron nombres para ordenanzas al Templo este año"
                 };
                 return {data, layout};
             }
-            let graphElements = graphData(0);
-            let datas = graphElements.data, 
-                layouts = graphElements.layout;
 
-                // Display using Plotly
-                Plotly.newPlot("myPlot", datas, layouts);
+let graphElements = graphData(0);
+let datas = graphElements.data, 
+    layouts = graphElements.layout;
 
+var config = {responsive: true};
+
+// Display using Plotly
+Plotly.newPlot("myPlot", datas, layouts,config);
 
 const reset = () => {
     document.querySelector('#myPlot').innerHTML = '';
     document.getElementById("dynamictable").innerHTML = '';
 }
 
+// Function to generate HTML table for monthly data for a given unit index
+// The table contains the months as rows and the data categories as columns
+// Categories: Total, Adults, Youth, New Members, YSA
 monthData = (i) => {
     var dict = {
         'Ene': [unitGroupList[i][0][0],unitGroupList[i][0][1],unitGroupList[i][0][2],unitGroupList[i][0][3],unitGroupList[i][0][4]],
